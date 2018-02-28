@@ -81,6 +81,8 @@
     line-height: 30px;
     padding: 0 10px;
     font-size: 13px;
+    text-decoration: none;
+    color: inherit;
 }
 
 .navbar a.active {
@@ -145,6 +147,10 @@
     float: left;
 }
 
+.p-header a {
+    color: inherit;
+}
+
 .p-right hr {
     margin: 25px 0;
     width: 100%;
@@ -157,6 +163,8 @@
 }
 
 .p-thumbnail {
+    width: 250px;
+    height: 150px;
     float: left;
     margin: 0 20px 10px 0;
 }

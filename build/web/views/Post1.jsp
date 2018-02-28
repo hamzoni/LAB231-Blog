@@ -1,27 +1,8 @@
-<%@page import="Utility.Tool"%>
 <%@page import="Entities.Post"%>
 <% 
     Post post = (Post) request.getAttribute("post");
-    
-    if (post == null) return;
 %>
 
-<div class="p-wrapper">
-    <div class="p-left">
-        <image class="p-left-deco" src="https://goo.gl/KM8J9y"/>
-    </div>
-    <div class="p-right">
-        <div class="p-header">
-            <h2>
-                <a><%=post.getName()%></a>
-            </h2>
-            <p class="p-date"><%=post.getDisplayDate()%></p>
-        </div>
-        <article class="p-article">
-            <image class="p-thumbnail" src="<%=post.getImage(request)%>"/>
+<image class="p-thumbnail" src="<%=post.getImage(request)%>"/>
             
-            <%=post.getContent()%>
-        </article>
-    </div>
-</div>
-
+<%=post.getContent()%>

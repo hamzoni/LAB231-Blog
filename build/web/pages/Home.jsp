@@ -6,11 +6,5 @@
 
 <% for (Post post : posts) { %>
     <% request.setAttribute("post", post); %>
-    <% if (post.getType() == Post.TEXT) { %>
-    <jsp:include page="<%="../views/Post1.jsp"%>"/>
-    <% } else if (post.getType() == Post.POEM) { %>
-    <jsp:include page="<%="../views/Post2.jsp"%>"/>
-    <% } else if (post.getType() == Post.ALBUM) { %>
-    <jsp:include page="<%="../views/Post3.jsp"%>"/>
-    <% } %>
+    <jsp:include page="../views/Post.jsp"/>
 <% } %>

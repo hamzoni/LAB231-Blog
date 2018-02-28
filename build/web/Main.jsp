@@ -7,6 +7,7 @@
             subpage = "404";
         }
     }
+    boolean isAbout = subpage.equals("About");
 %>
 <!DOCTYPE html>
 <html>
@@ -23,8 +24,8 @@
                     <h4 class="subheader">Welcome to my blog</h4>
                 </div>
                 <nav class="navbar">
-                    <a class="active">My Blog</a>
-                    <a>About Me</a>
+                    <a class="<% if (!isAbout) { %>active<% }; %>" href="home">My Blog</a>
+                    <a class="<% if (isAbout) { %>active<% }; %>" href="about">About Me</a>
                 </nav>
             </header>
             <!-- end of header -->
