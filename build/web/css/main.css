@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    font-family: sans-serif;
+}
+
+.container {
+    width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.header {
+    width: 100%;
+    height: 140px;
+    padding: 30px;
+    background: bisque;
+    float: left;
+}
+
+.footer {
+    margin: 20px 0;
+    width: 100%;
+    overflow: hidden;
+    clear: both;
+}
+
+.view-counter {
+    float: right;
+}
+
+.mainheader {
+    margin-bottom: 5px;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100vh;
+    background: beige;
+    padding: 10px;
+    padding-top: 30px;
+    float: left;
+}
+
+.wrapper-left,
+.wrapper-right {
+    float: left;
+}
+
+.p-header,
+.p-article
+{
+    float: left;
+    height: 100%;
+}
+
+.wrapper-left {
+    width: 75%;
+    padding-right: 10px;
+}
+
+.wrapper-right {
+    width: 25%;
+}
+
+.navbar {
+    width: 100%;
+    float: left;
+    height: 30px;
+    bottom: 0px;
+    position: absolute;
+    left: 0px;
+}
+
+.navbar a {
+    height: 100%;
+    float: left;
+    line-height: 30px;
+    padding: 0 10px;
+    font-size: 13px;
+}
+
+.navbar a.active {
+    font-weight: bold;
+}
+
+.sidebar-wrapper {
+    box-shadow: 0px 0px 10px 0px gray;
+    padding: 10px;
+    border-radius: 7px;
+    margin-bottom: 20px;
+}
+
+.sidebar-wrapper li {
+    font-size: 13px;
+    list-style-type: none;
+}
+
+.sidebar-wrapper li:before {
+    content: "*";
+    display: block;
+    float: left;
+}
+
+.sidebar-title {
+    margin-bottom: 5px;
+}
+
+.blankspace {
+    height: 100px;
+}
+
+.p-left {
+    width: 50px;
+    min-height: 100%;
+    float: left;
+}
+
+.p-right {
+    width: calc(100% - 50px);
+    min-height: 100%;
+    float: left;
+}
+
+.p-article,
+.p-header
+{
+    width: 100%;
+}
+
+.p-header {
+    margin-bottom: 20px;
+}
+
+.p-header * {
+    float: left;
+}
+
+.p-right hr {
+    margin: 25px 0;
+    width: 100%;
+    float: left;
+}
+
+.p-date {
+    float: right;
+    font-style: italic;
+}
+
+.p-thumbnail {
+    float: left;
+    margin: 0 20px 10px 0;
+}
+.p-image,
+.p-thumbnail
+{
+    border-radius: 10px;
+}
+
+.p-image {
+    width: 100%;
+}
+
+.p-left-deco {
+    width: 30px;
+    height: 30px;
+    marign: 0 auto;
+    display: block;
+}
+
+.p-footer {
+    width: 100%;
+    clear: both;
+    text-align: center;
+}
+
+.p-overview {
+    clear: both;
+    margin: 0 auto;
+    color: gray;
+}
+
+.p-poem {
+    color: gray;
+    text-align: right;
+    font-style: italic;
+    border-right: 3px solid #000;
+    padding-right: 5px;
+}
+
+.ov-header {
+    margin-bottom: 20px;
+}
+
+.ov-list {
+    width: 100%;
+    font-size: 13px;
+    border-collapse: collapse;
+}
+
+.ov-list a {
+    color: inherit;
+    width: 250px;
+    overflow: hidden;
+    display: block;
+}
+
+.ov-list tr {
+    border-top: 1px solid gray;
+}
+
+.ov-list td {
+    padding: 5px 0;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.ab-header {
+    margin-bottom: 20px;
+}
+
+.ab-wrapper {
+    font-size: 13px;
+}
+
+.ab-footer {
+    margin: 20px 0;
+    border: 1px solid gray;
+    border-width: 1px 0;
+    padding: 30px 0;
+}
+
+.ab-sub-sign {
+    margin-bottom: 20px;
+}
+
+.ab-sign {
+    font-size: 32px;
+    font-family: fantasy;
+    margin-bottom: 15px;
+}
