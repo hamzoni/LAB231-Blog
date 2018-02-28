@@ -151,7 +151,8 @@
     color: inherit;
 }
 
-.p-right hr {
+.p-right hr,
+.ind-hr {
     margin: 25px 0;
     width: 100%;
     float: left;

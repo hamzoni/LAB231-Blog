@@ -1,3 +1,5 @@
+<%@page import="Utility.FileIO"%>
+<%@page import="Utility.Tool"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     String subpage = (String) request.getAttribute("page");
@@ -8,6 +10,9 @@
         }
     }
     boolean isAbout = subpage.equals("About");
+    
+    String fn = "pagecounter.txt";
+    int n = Tool.toInt(FileIO.read(fn) + "");
 %>
 <!DOCTYPE html>
 <html>
@@ -48,7 +53,7 @@
                 </div>
                 
                 <footer class="footer">
-                    <div class="view-counter">29382</div>
+                    <div class="view-counter"><%=n + ""%></div>
                 </footer>
             </section>
             <!-- end of wrapper -->

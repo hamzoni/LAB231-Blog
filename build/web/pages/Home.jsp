@@ -7,4 +7,5 @@
 <% for (Post post : posts) { %>
     <% request.setAttribute("post", post); %>
     <jsp:include page="../views/Post.jsp"/>
+    <hr class="ind-hr">
 <% } %>
