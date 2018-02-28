@@ -1,3 +1,9 @@
+<%@page import="Entities.Post"%>
+<% 
+    Post post = (Post) request.getAttribute("post");
+    if (post == null) return;
+%>
+
 <div class="p-wrapper">
     <div class="p-left">
         <image class="p-left-deco" src="https://goo.gl/eyjL8P"/>
@@ -5,23 +11,15 @@
     <div class="p-right">
         <div class="p-header">
             <h2>
-                <a>You've gotta dance</a>
+                <a><%=post.getName()%></a>
             </h2>
-            <p class="p-date">16-11-2015</p>
+            <p class="p-date"><%=post.getDisplayDate()%></p>
         </div>
         <article class="p-article">
             <p class="p-poem">
-                Lorem ipsum dolor sit amet,
-                <br>consectetur adipiscing elit.
-                <br>Nulla maximus facilisis est,
-                <br>sed placerat metus
-                <br>sollicitudin quis. 
+                <%=post.getContent()%>
             </p>
         </article>
-        <hr>
-        <div class="p-footer">
-            <a class="p-overview" href="#">Overview</a>
-        </div>
     </div>
 </div>
 
