@@ -259,3 +259,9 @@
     font-family: fantasy;
     margin-bottom: 15px;
 }
+
+.ov-year-sort {
+    margin: 20px 0;
+    margin-bottom: 10px;
+    text-align: right;
+}
