@@ -3,7 +3,9 @@ package Entities;
 
 import Utility.Tool;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 import javax.servlet.http.HttpServletRequest;
 
 public class Post {
@@ -19,6 +21,16 @@ public class Post {
     public static final int ALBUM = 2;
 
     public Post() {
+    }
+    
+    public String getYear() {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy", Locale.ENGLISH);
+        return sdf.format(created_at);
+    }
+    
+    public String getMonth() {
+        SimpleDateFormat sdf = new SimpleDateFormat("MMMM", Locale.ENGLISH);
+        return sdf.format(created_at);
     }
     
     public String getImage(HttpServletRequest request) {

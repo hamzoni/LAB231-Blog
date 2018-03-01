@@ -265,3 +265,41 @@
     margin-bottom: 10px;
     text-align: right;
 }
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.tr-header {
+    background: antiquewhite;
+    font-weight: bold;
+}
+
+.pag-nav {
+    width: 100%;
+    float: left;
+    margin: 20px 0;
+    overflow: hidden;
+    text-align: center;
+}
+
+.pag-nav a {
+    display: inline-block;
+    border: 1px solid sandybrown;
+    border-radius: 3px;
+    line-height: 30px;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    width: 30px;
+    height: 30px;
+    margin: 0 5px 5px 0;
+}
+
+.pag-nav a.active {
+    background: sandybrown;
+}
+
+.pag-nav a:last-child {
+    margin-right: 0;
+}

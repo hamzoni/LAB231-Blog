@@ -18,24 +18,43 @@ public class PostModel {
         db = new DBConnection();
     }
     
-    public HashMap<Integer, HashMap<Integer, ArrayList<Post>>> listAll() throws Exception {
-        HashMap<Integer, HashMap<Integer, ArrayList<Post>>> results = new HashMap<Integer, HashMap<Integer, ArrayList<Post>>>();
-        
-        String query = "SELECT *, year(created_at) as y, month(created_at) as m FROM posts ORDER BY created_at ASC";
+    public int countAll() throws Exception {
+        String query = "SELECT COUNT(*) AS c FROM posts";
         Connection con = db.getConnection();
         
         PreparedStatement pstm = con.prepareStatement(query);
+        ResultSet rs = pstm.executeQuery();
+        
+        int count = 0;
+        while (rs.next()) count = rs.getInt("c");
+        
+        if (rs != null) rs.close();
+        if (pstm != null) pstm.close();
+        if (con != null) con.close();
+        
+        return count;
+    }
+    
+    public ArrayList<Post> listAll(int page, int total) throws Exception {
+        ArrayList<Post> results = new ArrayList<Post>();
+        
+        String query = "SELECT * FROM posts ORDER BY created_at DESC";
+        query += " OFFSET ? ROWS FETCH NEXT ? ROWS ONLY";
+        Connection con = db.getConnection();
+        
+        PreparedStatement pstm = con.prepareStatement(query);
+        pstm.setInt(1, page * total);
+        pstm.setInt(2, total);
         
         ResultSet rs = pstm.executeQuery();
         
         while (rs.next()) {
-            int y = rs.getInt("y");
-            int m = rs.getInt("m");
-            
-            if (!results.containsKey(y)) results.put(y, new HashMap<Integer, ArrayList<Post>>());
-            if (!results.get(y).containsKey(m)) results.get(y).put(m, new ArrayList<Post>());
-            results.get(y).get(m).add(parse(rs));
+            results.add(parse(rs));
         }
+        
+        if (rs != null) rs.close();
+        if (pstm != null) pstm.close();
+        if (con != null) con.close();
         
         return results;
     }
@@ -55,6 +74,10 @@ public class PostModel {
             post = parse(rs);
         }
         
+        if (rs != null) rs.close();
+        if (pstm != null) pstm.close();
+        if (con != null) con.close();
+        
         return post;
     }
     
@@ -73,6 +96,10 @@ public class PostModel {
             items.add(parse(rs));
         }
         
+        if (rs != null) rs.close();
+        if (pstm != null) pstm.close();
+        if (con != null) con.close();
+
         return items;
     }
     
